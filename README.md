@@ -4,11 +4,10 @@
 2. اضافة أو تحسين الشرح في الكود
 ## Path Planning
 
-The PathPlanning directory contains the following key files and folders:
-
-1.	userInput.py: handles user input for the program.
-2.	heuristics.py: contains heuristic functions for pathfinding algorithms.
-3.	util.py: Utility functions used across the codebase.
-4.	problem.py: defines the problem space or environment for the path-planning algorithms.
-5.	search.py: implements search algorithms for pathfinding.
-6.	main.py: the entry point for the program.
+يحتوي دليل PathPlanning على الملفات والمجلدات الرئيسية التالية:
+1.	userInput.py: يعالج إدخال المستخدم للبرنامج.
+2.	heuristics.py: يحتوي على دوال إرشادية (Heuristics) لخوارزميات البحث عن المسار.
+3.	util.py: دوال مساعدة تُستخدم عبر قاعدة الكود.
+4.	problem.py: يعرّف فضاء المشكلة أو البيئة لخوارزميات تخطيط المسار.
+5.	search.py: ينفذ خوارزميات البحث عن المسار.
+6.	main.py: نقطة البداية لتنفيذ البرنامج.

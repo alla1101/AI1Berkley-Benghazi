@@ -16,21 +16,24 @@ def combineStrings(a,b):
             solution.append((f"{x},{y}").replace(" ",""))
     return solution
 
-def combination_alla(n, max_layer):
+def combination_alla(n,max_layer,max_node):
     if max_layer == 0:
         return []
     solutions = []
-    for i in range(1,n+1):
+    for i in range(1,max_node):
         probset=[f"{i}"]
-        prev=combination_alla(n-i,max_layer-1)
-        if len(prev) == 0 and i != n: continue  
+        prev=combination_alla(n-i,max_layer-1,max_node)
+        if ( len(prev) == 0 and i != n): continue  
         # If Max Layer was Reached, then ProbSet won't get us to the required amount of layers, so we move to the next i.
         combs = combineStrings(probset,prev)
         for sol in combs:
             solutions.append( sol )
     return solutions
 
-solveit=combination_alla(26,max_layer=8)
+number_of_nodes = 26
+max_number_of_node_per_layer = 5
+
+solveit=combination_alla(number_of_nodes,max_layer=8,max_node=max_number_of_node_per_layer)
 for i in solveit:
     arr=i.split(",")
     end_ch=""

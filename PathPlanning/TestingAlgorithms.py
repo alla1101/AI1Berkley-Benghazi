@@ -13,7 +13,7 @@ def combineStrings(a,b):
         return a
     for x in a:
         for y in b:
-            solution.append(f"{x},{y}")
+            solution.append((f"{x},{y}").replace(" ",""))
     return solution
 
 def combination_alla(n, max_layer):
@@ -32,6 +32,9 @@ def combination_alla(n, max_layer):
 
 solveit=combination_alla(26,max_layer=8)
 for i in solveit:
-    for item in i:
-        print(item,end=" ")
+    arr=i.split(",")
+    end_ch=""
+    for item in arr:
+        print(end_ch+str(int(item)),end="")
+        end_ch=","
     print()

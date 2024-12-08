@@ -16,3 +16,4 @@ problem = problem(
 solution = search.aStarSearch(problem,nullHeuristic)
 #solution = search.aStarSearch(problem,allaHuristic)
 #solution = search.greedySearch(problem,allaHuristic)
+print(solution)

@@ -1,14 +1,14 @@
 from csp import csp
 constraints={
-    "x1,x2": lambda arr: arr[0]!=arr[1],
-    "x1,x3": lambda arr: arr[0]!=arr[1],
-    "x2,x3": lambda arr: arr[0]!=arr[1],
-    "x4,x3": lambda arr: arr[0]!=arr[1],
-    "x4,x2": lambda arr: arr[0]!=arr[1],
-    #"x4,x1": lambda arr: arr[0]!=arr[1],
+    "q1,q2": lambda arr: arr[0]!=arr[1] and abs(arr[0]-arr[1])!=1,
+    "q1,q3": lambda arr: arr[0]!=arr[1],
+    "q2,q3": lambda arr: arr[0]!=arr[1],
+    "q4,q3": lambda arr: arr[0]!=arr[1],
+    "q4,q2": lambda arr: arr[0]!=arr[1],
+    "q4,q1": lambda arr: arr[0]!=arr[1],
 }
 
-csp_obj = csp({"x1","x2","x3","x4"},{1,2,3},constraints=constraints)
+csp_obj = csp({"q1","q2","q3","q4"},{1,2,3,4},constraints=constraints)
 
 result=csp_obj.backtrackingSearch()
 

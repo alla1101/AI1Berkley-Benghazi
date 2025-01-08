@@ -1,13 +1,10 @@
 from DrawProblem import drawGraph
 from itertools import combinations
 
-# startingPoint="A"
-# goalPoint="G"
+# Parameters
+number_of_nodes = 5 # Not Allowed to Exceed 26
 
-node_number = 5 # minimum 2
-
-# steps_to_solve = 2 # minimum 2 , maximum node_number
-def createGraph(node_number):
+def getNodeNames(node_number):
     alphabets = [char for char in "BCDEFHIJKLMNOPQRSTUVWXYZ"]
     count = node_number - 2
     graph_items=['A']
@@ -17,11 +14,9 @@ def createGraph(node_number):
         graph_items.append(char)
         count-=1
     graph_items.append('G')
-    edges = list(combinations(graph_items, 2))  # 
-    real_edges=[]
-    for i,g in edges:
-        real_edges.append((i,g,1))
-    return real_edges
 
-edges = createGraph(9)
-drawGraph(edges)
+#Layers_and_Nodes = [
+    #["A"], # Layer 1 : Starting Node
+           # Rest Of The Nodes 
+    #["G"], # Layer N : Last Node
+#]

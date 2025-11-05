@@ -12,8 +12,11 @@ problem = problem(
     is_trace=True, maxFound=maxFoundInput
 )
 
+#solution = search.depthfirstsearch(problem)
+
 # Solving The Problem
-# solution = search.aStarSearch(problem,nullHeuristic)
-solution = search.aStarSearch(problem,allaHuristic)
+solution = search.uniformCostSearch(problem)
+#solution = search.depthfirstsearch(problem)
 # solution = search.greedySearch(problem,allaHuristic)
-# print(solution)
+print(solution)
+

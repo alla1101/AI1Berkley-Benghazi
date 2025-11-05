@@ -2,21 +2,17 @@ import util
 from heuristics import nullHeuristic
 
 def breadthfirstsearch(problem):
-   
     return []
 
 def depthfirstsearch(problem):
-    
     return []
 
 def uniformCostSearch(problem):
-    return aStarSearch(problem)
+    return []
 
 def greedySearch(problem,heuristic=nullHeuristic):
-    costFunc= lambda x: 0
-    return aStarSearch(problem, heuristic,costFunc)
-
-def aStarSearch(problem, heuristic=nullHeuristic, costFunc=lambda x: x):
+    return []
+def aStarSearch(problem, heuristic=nullHeuristic):
       
     return []
 

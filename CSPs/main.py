@@ -1,15 +1,16 @@
 from csp import csp
-constraints={
-    "q1,q2": lambda arr: arr[0]!=arr[1] and abs(arr[0]-arr[1])!=1,
-    "q1,q3": lambda arr: arr[0]!=arr[1],
-    "q2,q3": lambda arr: arr[0]!=arr[1],
-    "q4,q3": lambda arr: arr[0]!=arr[1],
-    "q4,q2": lambda arr: arr[0]!=arr[1],
-    "q4,q1": lambda arr: arr[0]!=arr[1],
-}
+N = 25
+domain={i for i in range(1,N+1)}
+variables = {f"q{i}" for i in range(1,N+1)}
+constraintx={}
+for i in range(1,N+1):
+    for j in range(1,N+1):
+        if j==i: continue
+        x_t=f"q{i},q{j}"
+        d= abs(i-j)
+        x_k=lambda arr,b=d: arr[0]!=arr[1] and abs(arr[0] - arr[1]) != b
+        constraintx.update({x_t:x_k})
 
-csp_obj = csp({"q1","q2","q3","q4"},{1,2,3,4},constraints=constraints)
-
+csp_obj = csp(variables,domain,constraints=constraintx)
 result=csp_obj.backtrackingSearch()
-
 print(result)
